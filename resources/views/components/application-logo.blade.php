@@ -5,4 +5,4 @@
 </svg>
 --}}
 
-<img {{ $attributes }} src='{{asset('assets/img/full-moon.png')}}' alt="skybyte">
+<img {{ $attributes }} src='{{url(asset('assets/img/full-moon.png'))}}' alt="skybyte">
