@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UsersAdmin\UsersAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/data_miner', function (){return view('pma_sky4.php');});
+
 Route::get('/', function () {
     return view('hub');
 })->middleware(['auth', 'verified'])->name('hub');
+
+Route::get('/users', [UsersAdmin::class, 'index'])->middleware(['auth', 'verified'])->name('users_list');
 
 /*Route::get('/dashboard', function () {
     return view('dashboard');
