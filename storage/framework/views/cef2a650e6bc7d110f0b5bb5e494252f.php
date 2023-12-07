@@ -21,6 +21,26 @@
                     <?php echo e(__("These are the users ")); ?>
 
 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Nume user</th>
+                                <th>Tip user</th>
+                                <th>Creat la data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <tr>
+                            <th><?php echo e($loop->iteration); ?></th>
+                            <td><?php echo e($user->name); ?></td>
+                            <td><?php echo e($user->userType); ?></td>
+                            <td><?php echo e(\Carbon\Carbon::parse($user->created_at)->format('d-m-Y')); ?></td>
+                        </tr>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

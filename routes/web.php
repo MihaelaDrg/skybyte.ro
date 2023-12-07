@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/data_miner', function (){return view('pma_sky4');});
+
 
 Route::get('/', function () {
     return view('hub');

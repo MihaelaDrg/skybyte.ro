@@ -11,6 +11,26 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("These are the users ") }}
 {{--                    @dd($users)--}}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Nume user</th>
+                                <th>Tip user</th>
+                                <th>Creat la data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    @foreach($users as $user)
+                        <tr>
+                            <th>{{$loop->iteration}}</th>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->userType}}</td>
+                            <td>{{\Carbon\Carbon::parse($user->created_at)->format('d-m-Y')}}</td>
+                        </tr>
+                    @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
